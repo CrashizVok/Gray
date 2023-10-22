@@ -11,5 +11,5 @@ wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 """
 
-with open("/home/felhasznalo/hotspot.conf", "w") as config_file:
+with open("hotspot.conf", "w") as config_file:
     config_file.write(config)
