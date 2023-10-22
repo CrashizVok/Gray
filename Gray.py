@@ -39,11 +39,12 @@ if x == 1:
         wpa_pairwise=TKIP
         rsn_pairwise=CCMP
         """
-    with open("/etc/hostapd/hotspot.conf", "w") as config_file:
-        config_file.write(hotspot_config)
-
-    subprocess.run(['sudo', 'systemctl', 'unmask', 'hostapd'])
-    subprocess.run(['sudo', 'systemctl', 'start', 'hostapd'])
+        global hotspot_config
+        with open("/etc/hostapd/hotspot.conf", "w") as config_file:
+            config_file.write(hotspot_config)
+    
+        subprocess.run(['sudo', 'systemctl', 'unmask', 'hostapd'])
+        subprocess.run(['sudo', 'systemctl', 'start', 'hostapd'])
 
     def track_connected_devices():
         connected_devices = set()  # Az aktuálisan csatlakoztatott eszközök nyomon követése
