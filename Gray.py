@@ -43,9 +43,8 @@ if x == 1:
     def create_hotspot():
         with open("/etc/hostapd/hotspot.conf", "w") as config_file:
             config_file.write(hotspot_config)
-
-        subprocess.run(['sudo', 'systemctl', 'unmask', 'hostapd'])
-        subprocess.run(['sudo', 'systemctl', 'start', 'hostapd'])
+            
+        subprocess.run(['sudo', 'hostapd', '/etc/hostapd/hotspot.conf'])
 
     def track_connected_devices():
         connected_devices = set()  # Az aktuálisan csatlakoztatott eszközök nyomon követése
