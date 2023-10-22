@@ -22,7 +22,9 @@ def Banner():
 Banner()    
 x = int(input("Enter the attack number: "))
 if x == 1:
+    hotspot_config = None 
     def create_hotspot():
+        global hotspot_config
         hotspot_config = """
         interface=wlan0
         driver=nl80211
@@ -39,7 +41,6 @@ if x == 1:
         wpa_pairwise=TKIP
         rsn_pairwise=CCMP
         """
-        global hotspot_config
         with open("/etc/hostapd/hotspot.conf", "w") as config_file:
             config_file.write(hotspot_config)
     
