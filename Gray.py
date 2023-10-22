@@ -62,8 +62,9 @@ if x == 1:
             # Ellenőrizzük, hogy az aktuálisan nyomon követett eszközök továbbra is csatlakoztatva vannak
             disconnected_devices = connected_devices.copy()
             for ip, mac, _ in matches:
-                if mac in disconnected_devices:
-                    disconnected_devices remove(mac)
+                for mac in disconnected_devices:
+                    disconnected_devices.discard(mac)
+
             
             for mac in disconnected_devices:
                 print(f"{mac} lecsatlakozott")
