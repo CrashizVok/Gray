@@ -27,7 +27,7 @@ if x == 1:
     hotspot_config = """
     interface=wlan0
     driver=nl80211
-    ssid=YourHotspotName
+    ssid=Free_Wifi
     hw_mode=g
     channel=6
     wmm_enabled=0
@@ -35,7 +35,7 @@ if x == 1:
     auth_algs=1
     ignore_broadcast_ssid=0
     wpa=2
-    wpa_passphrase=YourPassword
+    wpa_passphrase=jelszo
     wpa_key_mgmt=WPA-PSK
     wpa_pairwise=TKIP
     rsn_pairwise=CCMP
